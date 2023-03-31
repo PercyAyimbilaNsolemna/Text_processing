@@ -19,6 +19,12 @@ class TextProcessing:
         for word in self.matches:
             self.number_of_characters = self.number_of_characters + len(word)
         return f"The text has {self.number_of_characters} characters"
+    
+    #Creates a method that enables the user to find and replace a word
+    def replace(self, word_to_find, word_to_replace):
+        self.text = re.sub(word_to_find, word_to_replace, self.text, 1)
+        return f"The formatted text is: {self.text}"
+
     @property
     def text(self):
         return self._text
@@ -31,12 +37,14 @@ def main():
     textProcessing = TextProcessing()
     print(textProcessing)
 
-    textProcessing.text = "I am Percy"
+    textProcessing.text = "I am Percy. Percy is coming"
     print(f"Text: {textProcessing.text}")
 
     print(textProcessing.count_words())
 
     print(textProcessing.count_characters())
+
+    print(textProcessing.replace("Percy", "Agnes"))
 
 if __name__ == "__main__":
     main()
