@@ -4,7 +4,7 @@ def main():
     textProcessing = TextProcessing()
     print(textProcessing)
 
-    textProcessing.text = "I am Percy. Percy is coming"
+    textProcessing.text = "I am Percy. Here comes Percy"
     print(f"Text: {textProcessing.text}")
 
     print(textProcessing.count_words())

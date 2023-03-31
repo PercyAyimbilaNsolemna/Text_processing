@@ -5,7 +5,7 @@ class TextProcessing:
         self.text = text
 
     def __str__(self):
-        return "This is a text processing class"
+        return "This is Text Processing class"
     
     #Creates a method that counts the number of words in the text
     def count_words(self):
@@ -52,7 +52,7 @@ def main():
     textProcessing = TextProcessing()
     print(textProcessing)
 
-    textProcessing.text = "I am Percy. Percy is coming"
+    textProcessing.text = "I am Percy. Here comes Percy"
     print(f"Text: {textProcessing.text}")
 
     print(textProcessing.count_words())
