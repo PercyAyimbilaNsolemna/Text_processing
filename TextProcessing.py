@@ -24,6 +24,11 @@ class TextProcessing:
     def replace(self, word_to_find, word_to_replace):
         self.text = re.sub(word_to_find, word_to_replace, self.text, 1)
         return f"The formatted text is: {self.text}"
+    
+    #Creates a method that enables the user to find and replace all the occurence of that word in a text
+    def replace_all(self, word_to_find, word_to_replace):
+        self.text = re.sub(word_to_find, word_to_replace, self.text)
+        return f"The formatted text is: {self.text}"
 
     @property
     def text(self):
@@ -45,6 +50,9 @@ def main():
     print(textProcessing.count_characters())
 
     print(textProcessing.replace("Percy", "Agnes"))
+
+    textProcessing.text = "Dennis has written codes. The codes are working properly"
+    print(textProcessing.replace_all("codes", "lines of code"))
 
 if __name__ == "__main__":
     main()
