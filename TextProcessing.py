@@ -7,11 +7,12 @@ class TextProcessing:
     def __str__(self):
         return "This is a text processing class"
     
-    #Creates a method that checks the number of characters in a text
-    #def character_counter(self):
-        #self.character_count = self.text.count(self.text)
-        #return self.character_count
-
+    #Creates a method that counts the number of words in the text
+    def words_counter(self):
+        self.matches = re.findall(r"[a-z0-9]+", self.text, re.IGNORECASE)
+        self.number_of_words = len(self.matches)
+        return f"The text has {self.number_of_words} words"
+    
     @property
     def text(self):
         return self._text
@@ -27,10 +28,9 @@ def main():
     textProcessing.text = "I am Percy"
     print(f"Text: {textProcessing.text}")
 
-    #print(f"Number of characters: {textProcessing.character_counter()}")
+    print(textProcessing.words_counter())
 
-    text = "Percy"
-    print(len(text))
+    #print(f"Number of characters: {textProcessing.character_counter()}")
 
 if __name__ == "__main__":
     main()
